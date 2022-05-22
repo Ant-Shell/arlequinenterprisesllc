@@ -97,7 +97,7 @@ function getRandomCover() {
     homeView.classList.add('hidden');
     formView.classList.add('hidden');
 
-      savedCoversSection.innerHTML = " ";
+      savedCoversSection.innerHTML = "";
       for (var i = 0; i < savedCovers.length; i++) {
 
         //" " will come into play later when we want to delete
@@ -123,6 +123,7 @@ function getRandomCover() {
           </section>`
         }
     //interpolation! html code block!
+    findSavedMiniCover()
     //mini-cover class is from line 111 of styles.css
 }
 
@@ -199,6 +200,15 @@ function findSavedMiniCover() {
   }
 }
 
+function deleteSavedMiniCover(event) {
+  event.preventDefault();
+  for (var i = 0; i < savedCovers.length; i++) {
+    if (event.target.parentNode.id === `${savedCovers[i].id}`) {
+      savedCovers.splice(i, 1);
+    }
+  }
+  displaySavedView();
+}
 
 
 //assign that html element next
