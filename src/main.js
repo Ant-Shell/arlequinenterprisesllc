@@ -192,6 +192,14 @@ function saveCover() {
     }
 }
 
+function findSavedMiniCover() {
+  var savedMiniCovers = document.querySelectorAll(".mini-cover")
+  for (var i = 0; i < savedMiniCovers.length; i++) {
+    savedMiniCovers[i].addEventListener("dblclick", deleteSavedMiniCover)
+  }
+}
+
+
 
 //assign that html element next
 
