@@ -1,17 +1,20 @@
-//          Arlequin Enterprises LLC Presents:
-//          ***ROMANCE NOVEL COVER GENERATOR***
-//         By Anthony Shellman and Emma Russell
+/*
+            Arlequin Enterprises LLC Presents:
+            ***ROMANCE NOVEL COVER GENERATOR***
+            By Anthony Shellman and Emma Russell
+*/
 
 //                  ***QUERY SELECTORS***
 
-//Cover-Related Query Selectors
+
+// Cover-Related Query Selectors
   var coverImage = document.querySelector(".cover-image");
   var coverTitle = document.querySelector(".cover-title");
   var taglineVanilla = document.querySelector(".tagline");
   var taglineNum1 = document.querySelector(".tagline-1");
   var taglineNum2 = document.querySelector(".tagline-2");
 
-//Button Query Selectors
+// Button Query Selectors
   var randomButton = document.querySelector(".random-cover-button");
   var homeButton = document.querySelector(".home-button");
   var saveButton = document.querySelector(".save-cover-button");
@@ -19,31 +22,31 @@
   var makeNewButton = document.querySelector(".make-new-button");
   var createBookButton = document.querySelector(".create-new-book-button");
 
-//Page View Mode Query Selectors
+// Page View Mode Query Selectors
   var homeView = document.querySelector(".home-view");
   var savedView = document.querySelector(".saved-view");
   var formView = document.querySelector(".form-view");
 
-//Make Your Own Cover Query Selectors
+// Make Your Own Cover Query Selectors
   var userCoverOutput = document.querySelector(".user-cover");
   var userTitleOutput = document.querySelector(".user-title");
   var userDesc1Output = document.querySelector(".user-desc1");
   var userDesc2Output = document.querySelector(".user-desc2");
 
-//Saved Covers Query Selectors
+// Saved Covers Query Selectors
   var savedCoversSection = document.querySelector(".saved-covers-section");
 
-//Provided Saved Covers Array
+// Provided Saved Covers Array
   var savedCovers = [
     new Cover("http://3.bp.blogspot.com/-iE4p9grvfpQ/VSfZT0vH2UI/AAAAAAAANq8/wwQZssi-V5g/s1600/Do%2BNot%2BForsake%2BMe%2B-%2BImage.jpg", "Sunsets and Sorrows", "sunsets", "sorrows")
   ];
 
 //                  ***EVENT LISTENERS***
 
-//Load-Based Event Listener
+// Load-Based Event Listener
   window.addEventListener('load', getRandomCover)
 
-//Click-Based Event Listeners
+// Click-Based Event Listeners
   randomButton.addEventListener('click', getRandomCover)
   homeButton.addEventListener('click', displayHomeView)
   saveButton.addEventListener('click' , saveCover)
@@ -51,14 +54,15 @@
   makeNewButton.addEventListener('click', displayFormView)
   createBookButton.addEventListener('click', makeOwnCover)
 
+
 //                     ***FUNCTIONS***
 
-//Provided Randomizer Function
+// Provided Randomizer Function
   function getRandomIndex(array) {
     return Math.floor(Math.random() * array.length);
   };
 
-//Random Cover Function
+// Random Cover Function
   function getRandomCover() {
     var image = covers[getRandomIndex(covers)];
     var title = titles[getRandomIndex(titles)];
@@ -73,7 +77,7 @@
     taglineNum2.innerText = currentCover.tagline2;
   };
 
-//Page View Functions
+// Page View Functions
   function displayFormView() {
     changeHomeView();
     formView.classList.remove('hidden');
@@ -113,11 +117,11 @@
 
   function changeHomeView() {
     randomButton.classList.add("hidden");
-    viewSavedbutton.classList.add("hidden");
+    viewSavedbutton.classList.remove("hidden");
     homeButton.classList.remove("hidden");
   };
 
-//Make Own Cover Functions
+// Make Own Cover Functions
   function makeOwnCover(event) {
     event.preventDefault();
     userCoverAdd();
@@ -158,14 +162,14 @@
     return desc2New;
   };
 
-//Save Cover Function
+// Save Cover Function
   function saveCover() {
     if (!savedCovers.includes(currentCover)) {
     savedCovers.push(currentCover);
     };
   };
 
-//Cover Removal Functions
+// Cover Removal Functions
   function findSavedMiniCover() {
     var savedMiniCovers = document.querySelectorAll(".mini-cover");
     for (var i = 0; i < savedMiniCovers.length; i++) {
@@ -183,6 +187,8 @@
     displaySavedView();
   };
 
-//THANK YOU FOR READING!
-//COPYRIGHT ARLEQUIN ENTERPRISES LLC 2022
-//A SUBSIDIARY OF COOL GUY INC.
+/*
+THANK YOU FOR READING!
+COPYRIGHT ARLEQUIN ENTERPRISES LLC 2022
+A SUBSIDIARY OF COOL GUY INC.
+*/
