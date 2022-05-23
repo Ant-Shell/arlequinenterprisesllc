@@ -6,7 +6,6 @@
 
 //                  ***QUERY SELECTORS***
 
-
 // Cover-Related Query Selectors
   var coverImage = document.querySelector(".cover-image");
   var coverTitle = document.querySelector(".cover-title");
@@ -53,7 +52,6 @@
   viewSavedbutton.addEventListener('click', displaySavedView)
   makeNewButton.addEventListener('click', displayFormView)
   createBookButton.addEventListener('click', makeOwnCover)
-
 
 //                     ***FUNCTIONS***
 
