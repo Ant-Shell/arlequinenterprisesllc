@@ -10,7 +10,7 @@ Arlequin Enterprises LLC has once again revolutionized the Romance Novel Space. 
 4. Open it in your text editor
 5. View the project in the browser by running open index.html in your terminal
 6. Add all project partners and your assigned instructor as collaborators on the repository
-7. The project spec & rubric can be found here
+7. The project spec & rubric can be found [here](https://frontend.turing.io/projects/module-1/romcom-pair.html)
 
 ## How We Did It:
 
